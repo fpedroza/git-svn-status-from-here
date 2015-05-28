@@ -14,6 +14,10 @@ for gitdir in `find ./ -name .git -type d`;
             git -C $workdir status;
         fi
 
+        # todo: first check to see if the directory is even connected to svn
+        #git svn info --url
+        #Unable to determine upstream SVN information from working tree history
+
         # get the svn commit status - trim the first line since it's not helpful
         svnstatus=$(git -C $workdir svn dcommit --dry-run | awk '{ if(NR>1) print }');
         if [[ ! -z $svnstatus ]]; then
