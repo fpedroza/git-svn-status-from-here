@@ -1,5 +1,15 @@
 #!/bin/bash
 
+# Color Code for tput:
+#   0 – Black
+#   1 – Red
+#   2 – Green
+#   3 – Yellow
+#   4 – Blue
+#   5 – Magenta
+#   6 – Cyan    
+#   7 – White
+
 for gitdir in `find ./ -name .git -type d`; 
     do 
         workdir=${gitdir%/*};
